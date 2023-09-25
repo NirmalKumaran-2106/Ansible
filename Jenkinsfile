@@ -1,4 +1,7 @@
 pipeline {
+    agent {
+        label 'Ansible'
+    }
     stages {
         stage('Playbook') {
             steps {
