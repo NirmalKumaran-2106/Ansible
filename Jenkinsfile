@@ -6,7 +6,6 @@ pipeline {
         stage('Playbook') {
             steps {
                 sh 'ansible-playbook -i inventory playbook.yml'
-            
             }
         }
         stage ('Standard Mail') {
