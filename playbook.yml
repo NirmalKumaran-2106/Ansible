@@ -4,7 +4,8 @@
   become: true
   gather_facts: true
   tasks:
-    - name: Install GIT
+    - name: Install Tree
       yum:
+        name: tree
         state: latest
         service: started
