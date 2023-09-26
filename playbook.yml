@@ -1,10 +1,10 @@
 ---
-name: Sample playbook
-hosts: all
-become: true
-gather_facts: true
-tasks:
-  - name: Install GIT
-    yum:
-      state: latest
-      service: started
+- name: Sample playbook
+  hosts: all
+  become: true
+  gather_facts: true
+  tasks:
+    - name: Install GIT
+      yum:
+        state: latest
+        service: started
