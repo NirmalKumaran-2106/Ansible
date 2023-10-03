@@ -7,10 +7,13 @@
     - name: Install Tree
       yum:
         name: Tree
-        state: latest
-        service: started
+        state: present
     - name: HTTPD
       yum:
         name: HTTPD
-        state: latest
-        service: started
+        state: present
+    - name: Start Apache HTTP Server service
+      systemd:
+        name: httpd
+        enabled: yes
+        state: started
