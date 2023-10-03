@@ -10,9 +10,9 @@
         name: Tree
         state: latest
         service: started
-
-    - name:  Install Git
+    
+    - name: HTTPD
       yum:
-        name: Git
+        name: HTTPD
         state: latest
         service: started
