@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'Terraform'
+        label 'Ansible'
     }
     stages {
         stage('Playbook') {
