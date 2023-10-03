@@ -1,16 +1,14 @@
-...
+---
 - name: Configuration management
   hosts: all
   become: yes
   gather_facts: yes
-
   tasks:
     - name: Install Tree
       yum:
         name: Tree
         state: latest
         service: started
-    
     - name: HTTPD
       yum:
         name: HTTPD
