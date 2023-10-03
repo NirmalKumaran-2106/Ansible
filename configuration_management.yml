@@ -6,7 +6,7 @@
   tasks:
     - name: Install Tree
       yum:
-        name: Tree
+        name: tree
         state: present
     - name: HTTPD
       yum:
