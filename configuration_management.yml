@@ -10,9 +10,9 @@
         state: present
     - name: HTTPD
       yum:
-        name: HTTPD
+        name: httpd
         state: present
-    - name: Start Apache HTTP Server service
+    - name: Start HTTP service
       systemd:
         name: httpd
         enabled: yes
