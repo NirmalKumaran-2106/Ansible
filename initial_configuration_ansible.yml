@@ -1,0 +1,20 @@
+---
+- name: Configuration management
+  hosts: ansible
+  become: yes
+  gather_facts: yes
+  tasks:
+    - name: GIT Install
+      yum:
+        name: git
+        state: present
+    - name: Git Clone
+      ansible.builtin.shell: git clone https://github.com/NirmalKumaran-2106/StartUp-Command
+    - name: Choosing Folder
+      ansible.builtin.shell: cd StartUp-Commands
+    - name: Authorize
+      ansible.builtin.shell: sudo chmod 777 jenkins_master.sh
+    - name: Remove Files
+      ansible.builtin.shell: sudo rm -rf ansible_master.sh terraform_slave.sh
+    - name: Execute Initial Configuration
+      ansible.builtin.shell: ./jenkins_master.sh

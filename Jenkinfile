@@ -1,0 +1,22 @@
+pipeline {
+    agent {
+        label 'Ansible'
+    }
+    stages {
+        stage('Jenkins Playbook') {
+            steps {
+                sh 'ansible-playbook -i initial_configuration_jenkins.yml --limit jenkins'
+            }
+        }
+        stage('Ansible Playbook') {
+            steps {
+                sh 'ansible-playbook -i inventory initial_configuration_ansible.yml --limit ansible'
+            }
+        }
+        stage('Slave Playbook') {
+            steps {
+                sh 'ansible-playbook -i inventory initial_configuration_slave.yml --limit slave'
+            }
+        }
+    }
+}
