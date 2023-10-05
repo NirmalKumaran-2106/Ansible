@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Jenkins Playbook') {
             steps {
-                sh 'ansible-playbook -i initial_configuration_jenkins.yml'
+                sh 'ansible-playbook -i inventory initial_configuration_jenkins.yml'
             }
         }
         stage('Ansible Playbook') {
