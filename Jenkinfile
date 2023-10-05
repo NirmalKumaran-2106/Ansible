@@ -5,17 +5,17 @@ pipeline {
     stages {
         stage('Jenkins Playbook') {
             steps {
-                sh 'ansible-playbook -i initial_configuration_jenkins.yml --limit jenkins'
+                sh 'ansible-playbook -i initial_configuration_jenkins.yml'
             }
         }
         stage('Ansible Playbook') {
             steps {
-                sh 'ansible-playbook -i inventory initial_configuration_ansible.yml --limit ansible'
+                sh 'ansible-playbook -i inventory initial_configuration_ansible.yml'
             }
         }
         stage('Slave Playbook') {
             steps {
-                sh 'ansible-playbook -i inventory initial_configuration_slave.yml --limit slave'
+                sh 'ansible-playbook -i inventory initial_configuration_slave.yml'
             }
         }
     }
