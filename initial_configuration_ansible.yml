@@ -15,7 +15,7 @@
     - name: Remove Files
       shell: 
         sudo rm -rf /home/ec2-user/StartUp-Commands/terraform_slave.sh
-        sudo rm -rf /home/ec2-user/StartUp-Commands/terraform_slave.sh
+        sudo rm -rf /home/ec2-user/StartUp-Commands/jenkins_master.sh
         sudo rm -rf /home/ec2-user/StartUp-Commands/README.md
         sudo rm -rf /home/ec2-user/StartUp-Commands/Jenkinsfile
     - name: Execute Initial Configuration
