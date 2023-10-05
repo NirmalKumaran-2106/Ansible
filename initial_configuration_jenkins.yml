@@ -10,11 +10,9 @@
         state: present
     - name: Clone Git Repo
       shell: git clone https://github.com/NirmalKumaran-2106/StartUp-Commands
-    - name: Folder Access
-      shell: cd /home/ec2-user/StartUp-Commands
     - name: Authorize
-      shell: sudo chmod 777 jenkins_master.sh
+      shell: sudo chmod 777 /home/ec2-user/StartUp-Commands/jenkins_master.sh
     - name: Remove Files
-      shell: sudo rm -rf ansible_master.sh terraform_slave.sh
+      shell: sudo rm -rf /home/ec2-user/StartUp-Commands/ansible_master.sh terraform_slave.sh README.md Jenkinsfile
     - name: Execute Initial Configuration
-      shell: ./jenkins_master.sh
+      shell: /home/ec2-user/StartUp-Commands/./jenkins_master.sh

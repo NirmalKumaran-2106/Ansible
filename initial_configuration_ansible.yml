@@ -13,11 +13,9 @@
         repo: https://github.com/NirmalKumaran-2106/StartUp-Commands.git
         dest: /home/ec2-user/
         force: yes
-    - name: Folder Access
-      shell: cd /home/ec2-user/StartUp-Commands
     - name: Authorize
-      shell: sudo chmod 777 ansible_master.sh
+      shell: sudo chmod 777 /home/ec2-user/StartUp-Commands/ansible_master.sh
     - name: Remove Files
-      shell: sudo rm -rf jenkins_master.sh terraform_slave.sh
+      shell: sudo rm -rf /home/ec2-user/StartUp-Commands/jenkins_master.sh terraform_slave.sh README.md Jenkinsfile
     - name: Execute Initial Configuration
-      shell: ./ansible_master.sh
+      shell: /home/ec2-user/StartUp-Commands/./ansible_master.sh
