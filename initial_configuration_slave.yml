@@ -8,6 +8,10 @@
       yum:
         name: git
         state: present
+    - name: Create Directory
+      shell: sudo mkdir /home/ec2-user/Git
+    - name: Permission
+      shell: sudo chmod 777 Git
     - name: Clone Git Repo
       git:
         repo: https://github.com/NirmalKumaran-2106/StartUp-Commands.git
