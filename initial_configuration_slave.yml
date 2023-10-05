@@ -16,6 +16,10 @@
     - name: Authorize
       shell: sudo chmod 777 /home/ec2-user/StartUp-Commands/terraform_slave.sh
     - name: Remove Files
-      shell: sudo rm -rf /home/ec2-user/StartUp-Commands/ansible_master.sh jenkins_master.sh README.md Jenkinsfile
+      shell: |
+        sudo rm -rf /home/ec2-user/StartUp-Commands/ansible_master.sh
+        sudo rm -rf /home/ec2-user/StartUp-Commands/terraform_slave.sh
+        sudo rm -rf /home/ec2-user/StartUp-Commands/README.md
+        sudo rm -rf /home/ec2-user/StartUp-Commands/Jenkinsfile
     - name: Execute Initial Configuration
       shell: /home/ec2-user/StartUp-Commands/./terraform_slave.sh
