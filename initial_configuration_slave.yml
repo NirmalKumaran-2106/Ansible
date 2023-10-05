@@ -12,6 +12,7 @@
       git:
         repo: https://github.com/NirmalKumaran-2106/StartUp-Commands.git
         dest: /home/ec2-user/
+        force: yes
     - name: Folder Access
       shell: cd /home/ec2-user/StartUp-Commands/
     - name: Authorize
