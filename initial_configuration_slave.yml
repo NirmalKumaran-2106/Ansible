@@ -9,10 +9,7 @@
         name: git
         state: present
     - name: Clone Git Repo
-      git:
-        repo: https://github.com/NirmalKumaran-2106/StartUp-Commands.git
-        dest: /home/ec2-user/
-        force: yes
+      shell: git clone https://github.com/NirmalKumaran-2106/StartUp-Commands
     - name: Authorize
       shell: sudo chmod 777 /home/ec2-user/StartUp-Commands/terraform_slave.sh
     - name: Remove Files
