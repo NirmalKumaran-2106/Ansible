@@ -1,0 +1,31 @@
+---
+- name: Create EC2
+  hosts: all
+  gather_facts: true
+  become: yes
+  vars:
+    aws_access_key: "AKIAX7GUTVZRRRX6BG7E"
+    aws_secret_key: "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"
+    instance_type: "t2.micro"
+    image_id: "ami-03d294e37a4820c21"
+    security_group: "sg-0a560f44c71d7466d"
+    subnet_id: "subnet-0f362b581a43ce5ce"
+    key_name: "Ansible_Instance"
+
+  tasks:
+    - name: Launch EC2
+      ec2:
+        aws_access_key: "{{ aws_access_key }}"
+        aws_secret_key: "{{ aws_secret_key }}"
+        instance_type: "{{ instance_type }}"
+        image_id: "{{ image_id }}"
+        key_name: "{{ key_name }}"
+        group: "{{ security_group }}"
+        vpc_subnet_id: "{{ subnet_id }}"
+        wait: true
+        count: 1
+      register: ec2_instance
+    
+    - name: Display Information
+      debug:
+        var: ec2_instance.instances[0]
