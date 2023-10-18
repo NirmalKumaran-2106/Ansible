@@ -3,19 +3,9 @@ pipeline {
         label 'Ansible'
     }
     stages {
-        stage('Jenkins Playbook') {
+        stage('Ec2 Creation') {
             steps {
-                sh 'ansible-playbook -i inventory initial_configuration_jenkins.yml'
-            }
-        }
-        stage('Ansible Playbook') {
-            steps {
-                sh 'ansible-playbook -i inventory initial_configuration_ansible.yml'
-            }
-        }
-        stage('Slave Playbook') {
-            steps {
-                sh 'ansible-playbook -i inventory initial_configuration_slave.yml'
+                sh 'ansible-playbook -i inventory ec2.yml'
             }
         }
     }
