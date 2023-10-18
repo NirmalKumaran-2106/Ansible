@@ -4,6 +4,7 @@
   gather_facts: true
   become: yes
   vars:
+    region: "ap-south-1"
     aws_access_key: "AKIAX7GUTVZRRRX6BG7E"
     aws_secret_key: "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"
     instance_type: "t2.micro"
@@ -19,6 +20,7 @@
       ec2:
         aws_access_key: "{{ aws_access_key }}"
         aws_secret_key: "{{ aws_secret_key }}"
+        region: "{{ region }}"
         instance_type: "{{ instance_type }}"
         image: "{{ image }}"
         key_name: "{{ key_name }}"
