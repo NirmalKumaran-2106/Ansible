@@ -25,12 +25,3 @@
         group_id: "{{ security_group }}"
         vpc_subnet_id: "{{ subnet_id }}"
         count: 1
-        volumes:
-          -  device_name: "{{ device_name }}"
-             volume_size: "{{ volume_size }}"
-             volume_type: "{{ volume_type }}"
-      register: ec2_instance
-    
-    - name: Display Information
-      debug:
-        var: ec2_instance.instances[0]
